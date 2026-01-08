@@ -1,0 +1,31 @@
+Package: CCWTrialEmulation
+Type: Package
+Title: Cloning-censoring-weighting scheme for trial emuluation for time-to-event outcomes
+Version: 0.1
+Authors@R: c(
+    person(
+        "Mikkel Runason", "Simonsen",
+        email = "Mikkel.simonsen@rn.dk",
+        role = c("aut", "cre"),
+        comment = c(
+            affiliation = "Department of Haematology, Clinical Cancer Research Unit, Aalborg University Hospital, Aalborg, Denmark; Department of Mathematical Sciences, Aalborg University, Aalborg, Denmark"
+        )
+    ),
+    person(
+        "Lars", "Pedersen",
+        role = "aut",
+        comment = c(
+            affiliation = "Department of Clinical Epidemiology, Aarhus University Hospital, Aarhus N, Denmark; Department of Clinical Medicine, Faculty of Health, Aarhus University, Aarhus N, Denmark"
+        )
+    )
+ )
+Description: This R-package contains an implementation of the cloning-censoring-weighting scheme used for trial emulation. For this, we contrast the survival experience of patients receiving a treatment of interest within a certain grace period after diagnosis compared to patients that do not. This package assumes survival outcome is of interest and hence does not handle competing events. Furthermore, it is assumed that the censoring mechanism of the original dataset is non-informative. This package contains two main user functions, "Emulate_Trial" which produces survival estimates of interest, and "Emulate_Trial_Bootstrap" which efficiently (compared to repeated runs of "Emulate_Trial") produces the relevant confidence intervals of the estimates using parallelized computations.
+License: GPL-3
+Encoding: UTF-8
+RoxygenNote: 7.3.3
+Collate: 
+    'Internal_functions.R'
+    'Emulate_Trial.R'
+    'Emulate_Trial_Bootstrap.R'
+Depends: R (>= 4.1.0)
+Imports: survival, dplyr, utils, parallel, survminer
